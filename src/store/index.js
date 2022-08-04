@@ -5,6 +5,9 @@ const initialState = { counter: 0, showCounter: true };
 
 const counterReducer = (state = initialState, action) => {
   if (action.type === 'increment') {
+    // IMPORTANT: you must never mutate existing state: always override and return a brand new state
+    // i.e. don't do this: state.counter++ (mutating the original state)
+    // instead we return brand new values like this:
     return {
       counter: state.counter + 1,
       // even though we're not changing this property, we have to return it because redux won't merge
