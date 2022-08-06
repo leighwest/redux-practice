@@ -9,8 +9,8 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   // subscribes to the counter in store and will be automatically updated when counter is updated
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter); // first counter refers to the slice named counter
+  const show = useSelector((state) => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
